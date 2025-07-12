@@ -66,7 +66,7 @@ function App() {
 
   useEffect(() => {
     if(user) {
-      const socketio = io('https://instagram-clone-e205.onrender.com', {
+      const socketio = io(`${import.meta.env.VITE_BACKEND_URL}`, {
         query: {
           userId: user?._id
         },

@@ -35,7 +35,7 @@ export const Profile = () => {
   const handleFollowToggle = async () => {
     try {
       const res = await axios.post(
-        `https://instagram-clone-e205.onrender.com/api/v1/user/followorunfollow/${userProfile._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/followorunfollow/${userProfile._id}`,
         {},
         { withCredentials: true }
       );
