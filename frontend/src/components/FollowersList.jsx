@@ -28,7 +28,7 @@ const FollowersList = () => {
   useEffect(() => {
     const fetchFollowers = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/${id}/followers`, { withCredentials: true });
+        const res = await axios.get(`http://localhost:8000/api/v1/user/${id}/followers`, { withCredentials: true });
         setFollowers(res.data.followers || []);
       } catch (err) {
         console.error("Failed to load followers:", err);
@@ -40,7 +40,7 @@ const FollowersList = () => {
   // Follow/Unfollow toggle handler
   const handleFollowToggle = async (targetUserId) => {
     try {
-      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/followorunfollow/${targetUserId}`, {}, { withCredentials: true });
+      await axios.post(`http://localhost:8000/api/v1/user/followorunfollow/${targetUserId}`, {}, { withCredentials: true });
 
       // Update local map to toggle follow state immediately
       setFollowingMap(prev => ({

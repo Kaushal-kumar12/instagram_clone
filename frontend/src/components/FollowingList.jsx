@@ -27,7 +27,7 @@ const FollowingList = () => {
   useEffect(() => {
     const fetchFollowing = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/${id}/following`, { withCredentials: true });
+        const res = await axios.get(`http://localhost:8000/api/v1/user/${id}/following`, { withCredentials: true });
         setFollowingUsers(res.data.following || []);
       } catch (err) {
         console.error("Failed to load following users:", err);
@@ -38,7 +38,7 @@ const FollowingList = () => {
 
   const handleFollowToggle = async (targetUserId) => {
     try {
-      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/followorunfollow/${targetUserId}`, {}, { withCredentials: true });
+      await axios.post(`http://localhost:8000/api/v1/user/followorunfollow/${targetUserId}`, {}, { withCredentials: true });
 
       setFollowingMap(prev => ({
         ...prev,

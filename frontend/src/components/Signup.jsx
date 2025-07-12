@@ -27,7 +27,7 @@ const Signup = () => {
         console.log(input)
         try {
 setLoading(true);
-            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/register`,input, {
+            const res = await axios.post('http://localhost:8000/api/v1/user/register',input, {
                 headers:{
                     'Content-type': 'application/json'
                 },

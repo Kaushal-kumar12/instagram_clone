@@ -33,7 +33,7 @@ const SuggestedUsers = () => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/followorunfollow/${targetUserId}`,
+        `http://localhost:8000/api/v1/user/followorunfollow/${targetUserId}`,
         {},
         { withCredentials: true }
       );

@@ -1,13 +1,2 @@
-# Node modules
-frontend/node_modules/
-backend/node_modules/
-.DS_Store
-.vscode
-frontend/.env
-backend/dist/
-frontend/dist/
-npm-debug.log*
-yarn-error.log*
-yarn-debug.log*
-pnpm-debug.log*
-lerna-debug.log*
+node_modules
+.env
