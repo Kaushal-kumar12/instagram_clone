@@ -33,7 +33,7 @@ const SuggestedUsers = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/v1/user/followorunfollow/${targetUserId}`,
+        `https://instagram-clone-te4g.onrender.com/api/v1/user/followorunfollow/${targetUserId}`,
         {},
         { withCredentials: true }
       );
